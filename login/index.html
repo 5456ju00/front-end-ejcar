@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>Login</h1>
+        </div>
+
+        <form id="formLogin" class="form">
+            <div class="row">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Digite seu nome de usuário" required>
+            </div>
+
+            <div class="row">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="********" required>
+            </div>
+
+            <div class="row">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="actions">
+                <a href="#" id="forgotPassword">Esqueci minha senha</a>
+                <button type="submit">Entrar</button>
+                <p>Não é cadastrado ainda? <a href="#">Criar Conta</a></p>
+            </div>
+        </form>
+
+        <div class="mensagem" id="mensagem"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

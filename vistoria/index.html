@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro de Vistoria</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="card">
+    <header class="card-header">
+      <h1>Cadastro de Vistoria</h1>
+      <p class="subtitle">Preencha os dados e clique em salvar.</p>
+    </header>
+
+    <form id="formVistoria" class="form" autocomplete="off" novalidate>
+      <div class="row">
+        <label for="fluxo">Fluxo</label>
+        <input id="fluxo" name="fluxo" type="text" required minlength="3" placeholder="Descreva o fluxo" />
+      </div>
+
+      <div class="row">
+        <label for="step">Step</label>
+        <input id="step" name="step" type="text" required placeholder="Passo do processo" />
+      </div>
+
+      <div class="row">
+        <label for="chaveDeRoda">Chave de Roda</label>
+        <select id="chaveDeRoda" name="chaveDeRoda" required>
+          <option value="S">Sim</option>
+          <option value="N">Não</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="macaco">Macaco</label>
+        <select id="macaco" name="macaco" required>
+          <option value="S">Sim</option>
+          <option value="N">Não</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="outro">Outro</label>
+        <input id="outro" name="outro" type="text" placeholder="Outras informações" />
+      </div>
+
+      <div class="actions">
+        <button type="submit" onclick="salvarVistoria()">Salvar</button>
+        <button type="button" id="btnLimpar" class="secondary">Limpar</button>
+      </div>
+
+      <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

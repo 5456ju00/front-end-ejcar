@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Serviço</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>Cadastro de Serviço</h1>
+            <p class="subtitle">Preencha os dados abaixo para cadastrar um novo serviço</p>
+        </div>
+
+        <form id="formServico" class="form">
+            <div class="row">
+                <label for="funcionario">Funcionário</label>
+                <input type="text" id="funcionario" name="funcionario" required>
+            </div>
+
+            <div class="row">
+                <label for="servicoRealizado">Serviço Realizado</label>
+                <input type="text" id="servicoRealizado" name="servicoRealizado" required>
+            </div>
+
+            <div class="row">
+                <label for="data">Data</label>
+                <input type="date" id="data" name="data" required>
+            </div>
+
+            <div class="row">
+                <label for="orcamento">Orçamento</label>
+                <input type="text" id="orcamento" name="orcamento" required>
+            </div>
+
+            <div class="row">
+                <label for="produto">Produto</label>
+                <input type="text" id="produto" name="produto" required>
+            </div>
+
+            <div class="actions">
+                <button type="submit">Cadastrar</button>
+                <button type="button" class="secondary" id="resetButton">Cancelar</button>
+            </div>
+        </form>
+
+        <div class="mensagem" id="mensagem"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

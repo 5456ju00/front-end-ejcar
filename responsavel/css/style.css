@@ -1,0 +1,121 @@
+/* style.css - visual limpo e moderno */
+:root{
+    --bg-gradient-start: #0f172a;
+    --bg-gradient-end: #2a4365;
+    --card-bg: rgba(255,255,255,0.04);
+    --accent: #ff6b6b;
+    --accent-2: #ffd166;
+    --muted: rgba(255,255,255,0.8);
+    --glass: rgba(255,255,255,0.06);
+    --radius: 12px;
+  }
+  
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--muted);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  
+  /* Card */
+  .card{
+    width:100%;
+    max-width:520px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: var(--radius);
+    padding:22px;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    border: 1px solid rgba(255,255,255,0.04);
+    backdrop-filter: blur(6px);
+  }
+  
+  /* Header */
+  .card-header{
+    text-align:center;
+    margin-bottom:18px;
+  }
+  .card-header h1{
+    font-size:1.4rem;
+    color: #fff;
+    margin-bottom:6px;
+  }
+  .subtitle{
+    font-size:0.92rem;
+    color: rgba(255,255,255,0.75);
+  }
+  
+  /* Form */
+  .form .row{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:12px;
+  }
+  label{
+    font-size:0.82rem;
+    margin-bottom:6px;
+    color: rgba(255,255,255,0.85);
+  }
+  input[type="text"],
+  input[type="tel"]{
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: #fff;
+    padding:10px 12px;
+    border-radius:10px;
+    outline:none;
+    font-size:1rem;
+    transition: box-shadow .15s, border-color .15s;
+  }
+  input:focus{
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45), 0 0 0 4px rgba(255,107,107,0.06);
+    border-color: var(--accent);
+  }
+  
+  /* Actions */
+  .actions{
+    display:flex;
+    gap:10px;
+    margin-top:8px;
+    justify-content:flex-end;
+  }
+  button{
+    background: linear-gradient(180deg,var(--accent), #eb4d4d);
+    color:#fff;
+    border:none;
+    padding:10px 16px;
+    font-size:1rem;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow: 0 8px 18px rgba(235,77,77,0.18);
+    transition: transform .12s ease, opacity .12s;
+  }
+  button.secondary{
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.9);
+    box-shadow: none;
+  }
+  button:active{transform:translateY(1px)}
+  button:disabled{opacity:0.6; cursor:not-allowed}
+  
+  /* mensagem */
+  .mensagem{
+    margin-top:14px;
+    min-height:22px;
+    font-size:0.94rem;
+  }
+  .mensagem.success{ color: var(--accent-2); }
+  .mensagem.error{ color: #ffb4b4; }
+  
+  /* responsividade */
+  @media (max-width:460px){
+    .card{ padding:16px }
+    .actions{ flex-direction:column; align-items:stretch }
+    .actions button{ width:100% }
+  }
+  

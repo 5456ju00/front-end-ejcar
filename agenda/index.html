@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>Agendamento</h1>
+        </div>
+
+        <form id="formAgendamento" class="form">
+            <div class="row">
+                <label for="dataEntrada">Data da entrada do veículo:</label>
+                <input type="datetime-local" id="dataEntrada" name="dataEntrada" required>
+            </div>
+
+            <div class="row">
+                <label for="dataSaida">Data da saída do veículo:</label>
+                <input type="datetime-local" id="dataSaida" name="dataSaida" required>
+            </div>
+
+            <div class="row">
+                <label for="temSeguradora">Tem Seguradora?</label>
+                <input type="checkbox" id="temSeguradora" name="temSeguradora">
+            </div>
+
+            <div class="row" id="seguradoraInfo" style="display:none;">
+                <label for="nomeSeguradora">Nome da seguradora:</label>
+                <input type="text" id="nomeSeguradora" name="nomeSeguradora">
+
+                <label for="numeroSeguradora">Número da seguradora:</label>
+                <input type="tel" id="numeroSeguradora" name="numeroSeguradora" placeholder="+55" pattern="\+55\d{2}\d{9}">
+            </div>
+
+            <div class="actions">
+                <button type="submit">Concluir agendamento</button>
+                <button type="button" class="secondary" id="resetButton">Cancelar</button>
+            </div>
+        </form>
+
+        <div class="mensagem" id="mensagem"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

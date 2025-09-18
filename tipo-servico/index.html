@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Tipo de Serviço</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>Cadastro de Tipo de Serviço</h1>
+            <p class="subtitle">Preencha os dados abaixo para cadastrar um novo tipo de serviço</p>
+        </div>
+
+        <form id="formServico" class="form">
+            <div class="row">
+                <label for="modalidadeServico">Modalidade do Serviço</label>
+                <input type="text" id="modalidadeServico" name="modalidadeServico" required>
+            </div>
+
+            <div class="actions">
+                <button type="submit">Cadastrar</button>
+                <button type="button" class="secondary" id="resetButton">Cancelar</button>
+            </div>
+        </form>
+
+        <div class="mensagem" id="mensagem"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

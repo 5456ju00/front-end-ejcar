@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro de Responsável</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="card">
+    <header class="card-header">
+      <h1>Cadastro de Responsável</h1>
+      <p class="subtitle">Preencha os dados e clique em salvar.</p>
+    </header>
+
+    <form id="formResponsavel" class="form" autocomplete="off" novalidate>
+      <div class="row">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" required minlength="3" placeholder="Nome completo" />
+      </div>
+
+      <div class="row">
+        <label for="telefone">Telefone</label>
+        <input id="telefone" name="telefone" type="tel" required placeholder="(99) 9 9999-9999" />
+      </div>
+
+      <div class="row">
+        <label for="cpf">CPF</label>
+        <input id="cpf" name="cpf" type="text" required maxlength="14" placeholder="000.000.000-00" />
+      </div>
+
+      <div class="row">
+        <label for="cep">CEP</label>
+        <input id="cep" name="cep" type="text" required maxlength="9" placeholder="00000-000" />
+      </div>
+
+      <div class="row">
+        <label for="endereco">Endereço</label>
+        <input id="endereco" name="endereco" type="text" required placeholder="Rua, número, bairro" />
+      </div>
+
+      <div class="actions">
+        <button type="submit" onclick = "salvarResponsavel()">Salvar</button>
+        <button type="button" id="btnLimpar" class="secondary">Limpar</button>
+      </div>
+
+      <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

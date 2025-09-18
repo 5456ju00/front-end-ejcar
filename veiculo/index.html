@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Veículo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agendamento de Veículo</h1>
+        <p>Preencha os dados e clique em Agendar.</p>
+        
+        <form id="formVeiculo">
+            
+            <label for="responsavel">Responsavel:</label>
+            <input type="text" id="responsavel" name="responsavel" placeholder="Ex: Maria Eduarda" required>
+            
+            <label for="modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo" placeholder="Ex: Fiat Uno" required>
+            
+            <label for="placa">Placa:</label>
+            <input type="text" id="placa" name="placa" placeholder="Ex: ABC-1234" required>
+            
+            <label for="ano">Ano:</label>
+            <input type="text" id="ano" name="ano" placeholder="Ex: 2020" required>
+            
+            <label for="cor">Cor:</label>
+            <input type="text" id="cor" name="cor" placeholder="Ex: Vermelho" required>
+            
+            <label for="chassi">Chassi:</label>
+            <input type="text" id="chassi" name="chassi" placeholder="Ex: 1234567890ABCDEF" required>
+
+            <button type="submit">Agendar</button>
+            <button type="button" id="limpar" onclick="limparCampos()">Limpar</button>
+        </form>
+        
+        <div id="resultado"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

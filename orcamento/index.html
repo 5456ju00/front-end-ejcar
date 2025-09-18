@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Orçamento</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <h1>Cadastro de Orçamento</h1>
+            <p class="subtitle">Preencha os dados abaixo para cadastrar um novo orçamento</p>
+        </div>
+
+        <form id="formOrcamento" class="form">
+            <div class="row">
+                <label for="maoDeObra">Mão de Obra</label>
+                <input type="text" id="maoDeObra" name="maoDeObra" required>
+            </div>
+
+            <div class="row">
+                <label for="produto">Produto</label>
+                <input type="text" id="produto" name="produto" required>
+            </div>
+
+            <div class="row">
+                <label for="codigoOrcamento">Código do Orçamento</label>
+                <input type="text" id="codigoOrcamento" name="codigoOrcamento" required>
+            </div>
+
+            <div class="actions">
+                <button type="submit">Cadastrar</button>
+                <button type="button" class="secondary" id="resetButton">Cancelar</button>
+            </div>
+        </form>
+
+        <div class="mensagem" id="mensagem"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
