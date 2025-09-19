@@ -39,8 +39,8 @@ function salvarResponsavel(){
 
         localStorage.setItem('id_responsavel', responsavel_id);
 
-
     }).catch(error => console.error('Erro!:', error));
+
 }
 
 
