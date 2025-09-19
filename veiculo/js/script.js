@@ -45,8 +45,6 @@ function salvarVeiculo(){
 
 }
 
-
-
 // scripts.js
 
 document.getElementById("formVeiculo").addEventListener("submit", function(event) {
