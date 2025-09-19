@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cadastro de Vistoria</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vistoria</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <main class="card">
-    <header class="card-header">
-      <h1>Cadastro de Vistoria</h1>
-      <p class="subtitle">Preencha os dados e clique em salvar.</p>
-    </header>
+    <h2>Vistoria</h2>
 
-    <form id="formVistoria" class="form" autocomplete="off" novalidate>
-      <div class="row">
-        <label for="fluxo">Fluxo</label>
-        <input id="fluxo" name="fluxo" type="text" required minlength="3" placeholder="Descreva o fluxo" />
+    <form id="formVistoria" class="form">
+      <p>O veículo chegou com:</p>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="pneu" name="pneu" checked> Pneu</label>
+        <label><input type="checkbox" id="step" name="step" checked> Step</label>
+        <label><input type="checkbox" id="macaco" name="macaco" checked> Macaco</label>
+        <label><input type="checkbox" id="chaveRoda" name="chaveRoda" checked> Chave de roda</label>
       </div>
 
       <div class="row">
-        <label for="step">Step</label>
-        <input id="step" name="step" type="text" required placeholder="Passo do processo" />
+        <label for="outro">Outro:</label>
+        <input type="text" id="outro" name="outro" placeholder="ex: óculos, bolsa, sacola">
       </div>
 
-      <div class="row">
-        <label for="chaveDeRoda">Chave de Roda</label>
-        <select id="chaveDeRoda" name="chaveDeRoda" required>
-          <option value="S">Sim</option>
-          <option value="N">Não</option>
-        </select>
+      <div class="termo">
+        <h3>TERMO DE ACEITAÇÃO!</h3>
+        <p>
+          Eu, proprietário(a) do veículo [Marca e Modelo do Veículo], placa [Placa do Veículo],
+          declaro, para todos os fins de direito, que concordo e atesto que o meu veículo entrou
+          nas instalações da oficina EJCAR com os seguintes objetos em seu interior.
+        </p>
+        <p>
+          Compreendo que esta lista representa os itens presentes no veículo no momento da sua
+          entrada na oficina. Cascavel-Paraná!
+        </p>
       </div>
 
-      <div class="row">
-        <label for="macaco">Macaco</label>
-        <select id="macaco" name="macaco" required>
-          <option value="S">Sim</option>
-          <option value="N">Não</option>
-        </select>
+      <div class="alerta">
+        <strong>Alerta</strong> Você leu e concordou com as condições?
       </div>
 
-      <div class="row">
-        <label for="outro">Outro</label>
-        <input id="outro" name="outro" type="text" placeholder="Outras informações" />
+      <label class="check-cond">
+        <input type="checkbox" id="aceite" required>
+        Eu li e concordo com as condições colocadas acima!
+      </label>
+
+      <div class="assinatura">
+        <label>Assine aqui</label>
+        <canvas id="assinatura" width="500" height="100"></canvas>
+        <button type="button" id="limparAssinatura">↺</button>
       </div>
 
-      <div class="actions">
-        <button type="submit" onclick="salvarVistoria()">Salvar</button>
-        <button type="button" id="btnLimpar" class="secondary">Limpar</button>
-      </div>
-
-      <div id="mensagem" class="mensagem" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn">Concluir</button>
     </form>
   </main>
 
