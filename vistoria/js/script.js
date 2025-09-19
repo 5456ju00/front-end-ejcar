@@ -31,6 +31,7 @@ function salvarVistoria() {
     }).then(data => {
         const vistoria_id = data.id;
         console.log("Id do registro salvo: ", vistoria_id);
+        window.location.href = 'sucesso.html'; 
         localStorage.setItem('id_vistoria', vistoria_id);
     }).catch(error => console.error('Erro!:', error));
 }

@@ -29,7 +29,7 @@ function salvarUsuario() {
     }).then(data => {
         const usuario_id = data.id;
         console.log("Id do registro salvo: ", usuario_id);
-
+        window.location.href = 'sucesso.html'; 
         localStorage.setItem('id_usuario', usuario_id);
     }).catch(error => console.error('Erro!:', error));
 }

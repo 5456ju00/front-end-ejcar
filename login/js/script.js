@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mensagemDiv.innerHTML = '';
     });
 
+    window.location.href = 'sucesso.html'; 
     function showMessage(message, type) {
         mensagemDiv.innerHTML = message;
         mensagemDiv.className = 'mensagem ' + type;
