@@ -1,32 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById('formProduto');
-    const mensagemDiv = document.getElementById('mensagem');
-    const resetButton = document.getElementById('resetButton');
+function salvarProduto(){
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
+    const descricao = document.getElementById("descricao").value.trim();
+    const valor = document.getElementById("valor").value.trim();
 
-        const descricao = document.getElementById('descricao').value;
-        const valor = parseFloat(document.getElementById('valor').value);
 
-        if (!descricao || isNaN(valor) || valor <= 0) {
-            showMessage("Por favor, preencha todos os campos corretamente.", "error");
-            return;
+    var headers= new Headers();
+    headers.append("Content-Type", "application/json");
+    headers.append("Access-Control-Allow-Origin", "*");
+
+    fetch( "http://127.0.0.1:8080/produto/cadproduto"  ,{
+        method: "POST", 
+        mode: "cors",
+        cache: "no-store",
+
+        body: JSON.stringify({
+            descricao: descricao,
+            valor: valor
+        }),
+
+        headers: headers
+
+
+    }).then(  response =>  {
+        if ( !response.ok){
+            throw new Error("Erro na resposta da API")
         }
+        return response.json(); // converte o corpo da resposta em JSON
+    }).then(  data =>  {
 
-        // Simulação de envio para o backend ou armazenamento de dados
-        setTimeout(() => {
-            showMessage("Produto cadastrado com sucesso!", "success");
-        }, 500);
-    });
+        const produto_id = data.id;
+        console.log("Id do registro salvo: ", produto_id);
 
-    resetButton.addEventListener('click', () => {
-        form.reset();
-        mensagemDiv.innerHTML = '';
-    });
 
-    function showMessage(message, type) {
-        mensagemDiv.innerHTML = message;
-        mensagemDiv.className = 'mensagem ' + type;
-    }
-});
+        localStorage.setItem('id_produto', produto_id);
+
+
+    }).catch(error => console.error('Erro!:', error));
+}
