@@ -22,6 +22,7 @@
       <div class="row">
         <label for="telefone">Telefone</label>
         <input id="telefone" name="telefone" type="tel" required placeholder="(45)99999-9999" />
+        <span id="telefoneErro" style="color: red; font-size: 14px;"></span>
       </div>
 
       <div class="row">
@@ -39,7 +40,7 @@
         <input id="endereco" name="endereco" type="text" required placeholder="Rua, número, bairro" />
       </div>
 
-      <div class="actions">
+      <div>
         <button type="button" onclick = "salvarResponsavel()">Salvar</button>
         <button type="button" onclick = "buscarResponsavel()">Buscar o Responsável</button>
         <button type="button" onclick = "limparCampos()">Limpar</button>
