@@ -1,4 +1,59 @@
+let listaProduto = [];
+let listaVeiculo = [];
+
+window.onload = () => {
+  //Produto
+    fetch("http://127.0.0.1:8080/produto/listarProduto")
+      .then(res => {
+        if (!res.ok) throw new Error("Erro ao buscar produto");
+        return res.json();
+      })
+      .then(data => {
+        listaProduto = data; // salva os endereços no array
+        const produtoSelect = document.getElementById("produtoSelect");
+        produtoSelect.innerHTML = '<option value="">Selecione um produto</option>';
+  
+        data.forEach(produto => {
+          const option = document.createElement("option");
+          option.value = produto.id;
+          option.textContent = `${produto.descricao}`;
+          produtoSelect.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error("Erro ao carregar produto:", error);
+        const produtoSelect = document.getElementById("produtoSelect");
+        produtoSelect.innerHTML = '<option value="">Erro ao carregar produto</option>';
+      });
+
+     //Veiculo 
+      fetch("http://127.0.0.1:8080/veiculo/listarVeiculo")
+      .then(res => {
+        if (!res.ok) throw new Error("Erro ao buscar Veiculo");
+        return res.json();
+      })
+      .then(data => {
+        listaVeiculo = data; // salva os endereços no array
+        const veiculoSelect = document.getElementById("veiculoSelect");
+        veiculoSelect.innerHTML = '<option value="">Selecione um Veiculo</option>';
+  
+        data.forEach(veiculo => {
+          const option = document.createElement("option");
+          option.value = veiculo.id;
+          option.textContent = `${veiculo.placa}`;
+          veiculoSelect.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error("Erro ao carregar Veiculo:", error);
+        const veiculoSelect = document.getElementById("veiculoSelect");
+        veiculoSelect.innerHTML = '<option value="">Erro ao carregar Veiculo</option>';
+      });
+  };
+
+
 function salvarOrcamento(){
+    
 
     const maoDeObra = document.getElementById("maoDeObra").value.trim();
     const produto = document.getElementById("produto").value.trim();
@@ -39,6 +94,8 @@ function salvarOrcamento(){
 
     }).catch(error => console.error('Erro!:', error));
 }
+
+
 
 
 // function salvarOrcamento(){
